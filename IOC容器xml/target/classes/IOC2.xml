@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--
+        测试bean的作用域，分别创建单实例和多实例的bean
+        bean的作用域：指的是bean是否是单实例，，默认为单实例
+
+
+        prototype:多实例
+            1)、容器启动默认不会去创建多实例bean
+            2）、获取的时候创建bean
+            3）、每次创建都会创建一个对象
+        singleton：单实例（默认）
+            1)、在容器启动完成之前就已经创建好对象，并保存到容器中了
+            2)、任何获取都是之前创建好的对象
+-->
+
+    <bean id="book" class="bean.Book" scope="singleton"></bean>
+    <bean id="car" class="bean.Car" scope="singleton"></bean>
+    <bean id="person" class="bean.Person"></bean>
+
+
+<!--
+        通过静态工厂方法创建bean、实例工厂创建bean、FactoryBean
+        bean的创建默认就是框架利用反射new出来的bean实例
+
+        工厂模式：工厂帮我们创建对象：有一个专门帮我们创建对象的类，这个类就是工厂
+
+        类似这样
+        bean.AirPlane ap = AirplaneFactory.getAirPlane(String jz);
+
+        静态工厂：工厂本身不需要被创建；通过静态方法调用 ， 对象 = 工厂类.工厂方法名();
+        实例工厂：工厂本身需要被创建，
+                工厂类 工厂对象 = new 工厂类（）；
+                工厂类.getAirPlane("张三")；
+-->
+
+
+<!--
+            1.静态工厂创建bean
+                    factory-method="getAirPlane" ，指定哪个方法是工厂方法
+                    constructor-arg  ： 可以为方法传参数
+-->
+    <bean id="Staticairplane" class="factory.AirplaneStaticFactory" factory-method="getAirPlane">
+        <constructor-arg value="机长达人"></constructor-arg>
+    </bean>
+
+
+<!--
+            2.实例工厂使用
+                1、先配置出实例工厂对象
+                2、配置出我们想要的Airplane使用哪个工厂创建
+                    1)、factory-bean：指定使用哪个机场实例
+                    2）、factory-method：指定使用哪个工厂方法
+-->
+
+    <bean id="instanceFactory" class="factory.AirPlaneInstanceFactory" ></bean>
+    <bean id="InstanceAirplane" class="bean.AirPlane" factory-bean="instanceFactory" factory-method="getAirPlane">
+        <constructor-arg name="jz" value="中国好机长"/>
+    </bean>
+
+
+<!--
+        3.FactoryBean 进行创建实例（spring规定的一个接口）
+            只要是这个接口的实现类，spring都认为是一个工厂
+
+           1)、IOC启动的时候不会创建实例
+           2）、FactoryBean：获取的时候才会创建对象
+
+
+-->
+    <bean id="MyFactoryBeanImpl" class="factory.MyFactoryBeanImpl" ></bean>
+
+
+</beans>

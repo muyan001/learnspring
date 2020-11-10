@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    关于自动装配（只适用于自定的对象，基本对象无法做到自动装配）-->
+<!--    property:这种方式就是手动配置
+
+        autowire="default/no"  : 不自动装配
+
+        // 按照某种规则自动装配
+        autowire="byName"  ：
+                private Car car;
+                以属性名作为id去容器中找到这个组件，给他赋值,,,如果找不到，直接装配null
+                car = ioc.getBean("car")
+
+
+        autowire="byType"  ：
+                private Car car;
+                1.以属性的类型，去容器中找到这个组件，如果容器中中有给类型的多个组件，则会报错
+                expected single matching bean but found 2: car,car02
+
+                2.没找到呢，装配null
+
+
+
+                car = ioc.getBean(Car.class)
+        autowire="constructor"   ：
+                按照构造器进行赋值
+                public Person(Car car)
+                1.先按照有参构造器参数类型进行装配，没有直接赋值null
+                2.  如果按照类型找到了多个呢，参数名作为id继续匹配，找不到就直接赋值null
+                3.不会报错
+
+
+
+
+-->
+
+
+    <bean id="car" class="bean.Car">
+        <property name="name" value="宝马"/>
+    </bean>
+
+<!--    <bean id="car02" class="bean.Car">-->
+<!--        <property name="name" value="奔驰"/>-->
+<!--    </bean>-->
+
+    <bean id="person" class="bean.Person" autowire="byType">
+    </bean>
+<!--    private List<Book> books; 容器可以将容器中所有的   book封装list赋值给这个属性-->
+    <bean id="book1" class="bean.Book">
+        <property name="bookName" value="book1"/>
+    </bean>
+    <bean id="book2" class="bean.Book">
+        <property name="bookName" value="book2"/>
+    </bean>
+    <bean id="book3" class="bean.Book">
+        <property name="bookName" value="book3"/>
+    </bean>
+
+
+<!--
+实验14：[SpEL测试I]
+    在SpEL中使用字面量、
+    引用其他bean、
+    引用其他bean的某个属性值、
+    调用非静态方法
+    调用静态方法、
+    使用运算符
+-->
+
+<!--    语法 #{}-->
+
+    <bean id="person2" class="bean.Person">
+
+<!-- 算术运算符-->
+        <property name="age" value="#{12*2}"/>
+<!--        引用其他bean的属性-->
+        <property name="name" value="#{book1.author}"/>
+
+<!--        引用其他bean-->
+        <property name="car" value="#{car}"/>
+
+<!--        调用静态方法 ， 语法：  #{T(全类名).静态方法名(参数)}
+-->
+        <property name="addr" value="#{T(java.util.UUID).randomUUID().toString()}"/>
+
+<!--        调用非静态方法   语法： 对象.方法名-->
+        <property name="phone" value="#{book1.getPrice()}"/>
+
+    </bean>
+
+
+</beans>

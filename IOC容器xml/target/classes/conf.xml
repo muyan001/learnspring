@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    注册第一个bean对象:注册一个person对象，Spring会自动创建这个person对象  -->
+<!--    一个bean标签可以注册一个组件（对象 类）-->
+<!--
+    class：写要注册组件的全类名
+    id:这个对象的唯一标识
+    property:为指定的person对象赋值
+            name:指定属性名
+            value：指定属性值
+
+-->
+    <bean id="firstperson" class="bean.Person">
+        <property name="age" value="15"/>
+        <property name="name" value="张三"/>
+        <property name="phone" value="1872673684"/>
+    </bean>
+
+    <bean id="person2" class="bean.Person">
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="name" value="李四"/>
+        <constructor-arg name="phone" value="12323333"/>
+
+    </bean>
+
+<!--    p命名空间，是为了区分同名的标签，就像区分两个类名一样，包名不一样那种情况-->
+    <bean id="person3" class="bean.Person" p:age="25" p:name="王五" p:phone="157374"/>
+
+</beans>

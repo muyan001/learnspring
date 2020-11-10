@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/util
+                            http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+<!--
+
+    xmlns:p="http://www.springframework.org/schema/p"                    引用p空间
+
+    要使用util命名空间 添加以下
+    xmlns:util="http://www.springframework.org/schema/util"          引用util命名空间
+
+    http://www.springframework.org/schema/util
+　　http://www.springframework.org/schema/util/spring-util-4.0.xsd
+
+
+
+-->
+
+
+<!--    null值该如何赋值-->
+    <bean id="person01" class="bean.Person" >
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="name" value="张三"/>
+        <constructor-arg name="phone">
+            <null></null>
+        </constructor-arg>
+    </bean>
+
+    <bean id="person02" class="bean.Person">
+        <property name="phone" value="156823"></property>
+        <property name="name" value="李四"/>
+        <property name="age">
+            <null></null>
+        </property>
+
+    </bean>
+
+    <bean id="car" class="bean.Car">
+        <property name="name" value="宝马"/>
+        <property name="color" value="红色"/>
+        <property name="price" value="1"/>
+        <property name="speed" value="100"/>
+    </bean>
+
+    <bean id="fuhao" class="bean.Person">
+        <property name="name" value="马云"/>
+        <property name="age" value="18"/>
+        <property name="phone" value="1789729374"/>
+<!--        引用已经存在的bean   -->
+        <property name="car" ref="car"/>
+    </bean>
+
+    <bean id="fuhao02" class="bean.Person">
+        <property name="name" value="马化腾"/>
+        <property name="age" value="17"/>
+        <property name="phone" value="1231231231"/>
+        <property name="car">
+            <bean class="bean.Car" p:name="奔驰" p:color="黑色" p:price="2" p:speed="101"/>
+        </property>
+    </bean>
+    
+    <bean id="person03" class="bean.Person">
+        <property name="books">
+<!--            直接字面值-->
+            <list>
+                <bean class="bean.Book" p:bookName="西游记" p:price="231"/>
+                <bean class="bean.Book" p:bookName="三国演义" p:price="212"/>
+            </list>
+        </property>
+        <property name="car" ref="car"></property>
+        <property name="phone" value="123123"/>
+        <property name="age" value="18"/>
+        <property name="name" value="黎明就在眼前"/>
+    </bean>
+
+
+    <bean id="person04" class="bean.Person">
+        <property name="car" ref="car"/>
+        <property name="name" value="哈哈"/>
+        <property name="phone" value="123123"/>
+        <property name="books">
+            <list>
+                <bean class="bean.Book" p:bookName="高盛帝国" p:price="18" p:author="noauthor" />
+                <bean class="bean.Book">
+                    <property name="price" value="17"></property>
+                    <property name="author" value="不知道"/>
+                    <property name="bookName" value="红楼梦"/>
+                </bean>
+            </list>
+        </property>
+
+<!--        关于map集合-->
+        <property name="maps">
+<!--            map标签相当于new了一个map-->
+            <map>
+<!--                一个entry代表一个键值对-->
+                <entry key="key01" value="18"></entry>
+                <entry key="key02" value-ref="car"></entry>
+                <entry key="key03">
+                    <bean class="bean.Book" p:bookName="孙子兵法" p:author="孙膑" p:price="1000"></bean>
+                </entry>
+            </map>
+        </property>
+        <property name="properties">
+<!--            相当于直接new properties ，；所有的k-v都是string类型-->
+            <props>
+<!--               k-v  都是string类型，值直接写在标签体中 -->
+                <prop key="username">root</prop>
+                <prop key="password">password</prop>
+
+            </props>
+        </property>
+    </bean>
+
+
+
+
+
+<!--            util名称空间创建集合类型bean： 方便被人引用-->
+<!--    util:map 相当于直接new LinkedHashMap 这个对象-->
+    <util:map id="mymap" >
+        <entry key="key01" value="你好"></entry>
+        <entry key="key02" value="少年"></entry>
+        <entry key="key03" value="天真"></entry>
+    </util:map>
+
+    <bean id="person11" class="bean.Person">
+        <property name="maps" ref="mymap"></property>
+    </bean>
+
+
+<!--    级联属性赋值，，级联属性：属性的属性 ,修改的时候，原来的bean的属性也会被修改-->
+    <bean id="person55" class="bean.Person">
+        <property name="car" ref="car"></property>
+<!--        这里就是为级联属性赋值-->
+        <property name="car.price" value="7999"/>
+    </bean>
+
+
+<!--    通过继承，实现bean配置信息的重用-->
+<!--    abstract="true" 这个bean的实例是抽象的，不能获取他的实例 ，只能被别人用来继承-->
+    <bean id="person22" class="bean.Person" abstract="true">
+        <property name="name" value="下雨天"/>
+        <property name="phone" value="123123"/>
+        <property name="age" value="19"/>
+    </bean>
+
+    <bean id="person33" class="bean.Person" parent="person22">
+        <property name="name" value="雾天"/>
+    </bean>
+</beans>
