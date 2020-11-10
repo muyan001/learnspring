@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringAOP_xml" />
+        <module name="SpringAOP" />
+        <module name="myspring01" />
+        <module name="自动装配" />
+        <module name="AOP" />
+        <module name="AOP (1)" />
+        <module name="springXW_jdbcTemplate" />
+        <module name="泛型依赖" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AOP" target="1.5" />
+      <module name="AOP (1)" target="1.5" />
+      <module name="myspring01" target="1.5" />
+      <module name="SpringAOP" target="1.5" />
+      <module name="SpringAOP_xml" target="1.5" />
+      <module name="springXW_jdbcTemplate" target="1.5" />
+      <module name="泛型依赖" target="1.5" />
+      <module name="自动装配" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

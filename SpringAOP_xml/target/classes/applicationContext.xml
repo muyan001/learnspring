@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+
+<!--    <context:component-scan base-package="com.spring"></context:component-scan>-->
+
+<!--    开启基于注解的AOP模式：AOP名称空间-->
+<!--    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>-->
+
+
+<!--
+
+            基于注解的AOP步骤：
+            1.将目标类和切面类加入到容器中，@Compont
+            2.告诉spring那个是切面类，@ASpect
+            3.在切面类中使用五个通知注解来配置切面中的这些方法都何时何地运行
+            4.开启基于注解的AOP功能
+
+-->
+
+
+
+<!-- 基于配置的AOP -->
+    <bean id="logUtil" class="com.spring.util.LogUtil"></bean>
+    <bean id="myMathCalculator" class="com.spring.inter.MyMathCalculator"></bean>
+    <bean id="aVlogUtil" class="com.spring.util.AVlogUtil"></bean>
+
+<!--    需要AOP名称空间-->
+    <aop:config>
+        <!-- 指定切面:@Aspect-->
+        <aop:pointcut id="globlePoint" expression="execution(public int com.spring.inter.MyMathCalculator.*(int ,int ))"/>
+        <aop:aspect ref="logUtil" order="3">
+            <!--
+                配置哪个方法是前置通知
+                @Before("切入点表达式")
+            -->
+
+            <aop:pointcut id="mypoint" expression="execution(public int com.spring.inter.MyMathCalculator.*(int ,int )) "/>
+            <aop:before method="before" pointcut="execution(public int com.spring.inter.MyMathCalculator.*(int ,int ))"></aop:before>
+            <aop:after-returning method="afterRunning" pointcut-ref="mypoint" returning="result"></aop:after-returning>
+            <aop:after-throwing method="afterExpection" pointcut-ref="mypoint" throwing="exception"></aop:after-throwing>
+            <aop:after method="after" pointcut-ref="mypoint"></aop:after>
+            <aop:around method="myAround" pointcut-ref="mypoint"/>
+
+        </aop:aspect>
+        <aop:aspect ref="aVlogUtil" order="1">
+            <aop:before method="myBefore" pointcut="execution(public int com.spring.inter.MyMathCalculator.*(int ,int ))"/>
+            <aop:after-returning method="myAfterReturning" pointcut-ref="globlePoint" returning="result"/>
+            <aop:after-throwing method="myAfterThrowing" pointcut-ref="globlePoint" throwing="exception"/>
+            <aop:after method="myAfter" pointcut-ref="globlePoint"/>
+
+
+        </aop:aspect>
+    </aop:config>
+
+<!--
+
+        注解：使用方便，快速
+        配置：功能完善
+
+        注解和配置的使用原则：重要的用配置，不重要的用注解。
+-->
+
+
+</beans>

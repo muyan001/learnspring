@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AOP/AOP.iml" filepath="$PROJECT_DIR$/AOP/AOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringAOP/AOP (1).iml" filepath="$PROJECT_DIR$/SpringAOP/AOP (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringAOP/SpringAOP.iml" filepath="$PROJECT_DIR$/SpringAOP/SpringAOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringAOP_xml/SpringAOP_xml.iml" filepath="$PROJECT_DIR$/SpringAOP_xml/SpringAOP_xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/learnspring.iml" filepath="$PROJECT_DIR$/.idea/learnspring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/自动装配/myspring01.iml" filepath="$PROJECT_DIR$/自动装配/myspring01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springXW_jdbcTemplate/springXW_jdbcTemplate.iml" filepath="$PROJECT_DIR$/springXW_jdbcTemplate/springXW_jdbcTemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/泛型依赖/泛型依赖.iml" filepath="$PROJECT_DIR$/泛型依赖/泛型依赖.iml" />
+      <module fileurl="file://$PROJECT_DIR$/自动装配/自动装配.iml" filepath="$PROJECT_DIR$/自动装配/自动装配.iml" />
+    </modules>
+  </component>
+</project>

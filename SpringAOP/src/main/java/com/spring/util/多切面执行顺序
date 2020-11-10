@@ -1,0 +1,25 @@
+前提：
+LogUtil的优先级大于AVlogUtil（LogUtil 的order的值为1，AVlogUtil的order的值为2），环绕通知位于LogUtil中。
+
+
+
+
+最终结果：
+
+【环绕前置通知】【add】方法开始执行，参数为：[1, 2]
+LogUtil------>add方法执行之前，参数为：[1, 2]
+VlogUtil==add方法执行之前，参数为：[1, 2]
+加法内部执行
+VlogUtil==add方法完全执行后
+VlogUtil==add 方法执行之后，结果为：3
+【环绕的返回通知】【add】方法返回，返回值：3
+【环绕后置通知】【add】方法结束
+LogUtil------>add方法完全执行后
+LogUtil------>add 方法执行之后，结果为：3
+
+
+
+
+引申出来的结论：
+
+环绕通知优先级大于普通通知，但是仅限于一个切面内

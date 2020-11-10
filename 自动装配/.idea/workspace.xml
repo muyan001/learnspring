@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a4c4463c-40ae-47f4-ac1d-a1b2c6ceec69" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven\MavenRepository" />
+        <option name="mavenHome" value="D:/maven/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.6.0\conf\settings-mine.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1igpoyKj6miKk2QVN6b1jGlHlEK" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\interll IDEA\Myspring" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="mytest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.myspring.test.mytest" />
+      <module name="自动装配" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.myspring.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.mytest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4c4463c-40ae-47f4-ac1d-a1b2c6ceec69" name="Default Changelist" comment="" />
+      <created>1602339267799</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602339267799</updated>
+      <workItem from="1602339271485" duration="2337000" />
+      <workItem from="1602341838992" duration="311000" />
+      <workItem from="1602506436406" duration="5668000" />
+      <workItem from="1602580929653" duration="1120000" />
+      <workItem from="1602589798748" duration="6060000" />
+      <workItem from="1602656467324" duration="246000" />
+      <workItem from="1602681719606" duration="1771000" />
+      <workItem from="1602684802153" duration="43000" />
+      <workItem from="1604500553723" duration="24000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="580" y="184" key="FileChooserDialogImpl" timestamp="1602683526636">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="184" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1602683526636" />
+    <state width="1556" height="372" key="GridCell.Tab.0.bottom" timestamp="1602599542185">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1556" height="372" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1602599542185" />
+    <state width="1556" height="372" key="GridCell.Tab.0.center" timestamp="1602599542185">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1556" height="372" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1602599542185" />
+    <state width="1556" height="372" key="GridCell.Tab.0.left" timestamp="1602599542184">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1556" height="372" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1602599542184" />
+    <state width="1556" height="372" key="GridCell.Tab.0.right" timestamp="1602599542185">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1556" height="372" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1602599542185" />
+    <state x="301" y="61" key="SettingsEditor" timestamp="1602339390401">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="301" y="61" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1602339390401" />
+    <state x="480" y="252" key="com.intellij.ide.util.TipDialog" timestamp="1602681721891">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="480" y="252" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1602681721891" />
+    <state x="170" y="78" key="new project wizard" timestamp="1602683383619">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="170" y="78" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1602683383619" />
+    <state x="480" y="112" key="spring file set editor" timestamp="1602684840058">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="480" y="112" key="spring file set editor/0.0.1600.860@0.0.1600.860" timestamp="1602684840058" />
+  </component>
+</project>
