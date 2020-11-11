@@ -58,27 +58,27 @@
 
         <!--        spring 面向切面编程的包-->
         <!--        spring 面向切面编程的包 -基础包   -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aspects</artifactId>
-            <version>4.0.0.RELEASE</version>
-        </dependency>
-        <!--        spring 面向切面编程的包 -加强版  -->
-        <dependency>
-            <groupId>net.sourceforge.cglib</groupId>
-            <artifactId>com.springsource.net.sf.cglib</artifactId>
-            <version>2.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aopalliance</groupId>
-            <artifactId>com.springsource.org.aopalliance</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>com.springsource.org.aspectj.weaver</artifactId>
-            <version>1.6.4.RELEASE</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-aspects</artifactId>-->
+<!--            <version>4.0.0.RELEASE</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash;        spring 面向切面编程的包 -加强版  &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>net.sourceforge.cglib</groupId>-->
+<!--            <artifactId>com.springsource.net.sf.cglib</artifactId>-->
+<!--            <version>2.2.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.aopalliance</groupId>-->
+<!--            <artifactId>com.springsource.org.aopalliance</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.aspectj</groupId>-->
+<!--            <artifactId>com.springsource.org.aspectj.weaver</artifactId>-->
+<!--            <version>1.6.4.RELEASE</version>-->
+<!--        </dependency>-->
 
 <!--        spring  的数据库模块 -->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
